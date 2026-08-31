@@ -14,7 +14,7 @@ spec:
 
   # Source defines the Git repository configuration where manifests are stored
   source:
-    repoURL: 'https://github.com/Pandu-90s/argocd.git'
+    repoURL: 'https://github.com/Pandu-90s/argocd-v1.git'
     targetRevision: main
     path: applications/cluster/rbac
 
