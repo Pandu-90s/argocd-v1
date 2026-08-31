@@ -12,7 +12,7 @@ spec:
 
   # Source defines the Git repository configuration where manifests are stored
   source:
-    chart: aws-load-balancer-controller
+    chart: catalogue
     repoURL: 'https://github.com/Pandu-90s/catalogue-config.git'
     targetRevision: 3.5.0
     path: .
