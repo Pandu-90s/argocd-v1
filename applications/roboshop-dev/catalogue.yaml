@@ -14,7 +14,7 @@ spec:
   source:
     chart: catalogue
     repoURL: 'https://github.com/Pandu-90s/catalogue-config.git'
-    targetRevision: 3.5.0
+    targetRevision: main
     path: .
     helm:
       valueFiles: 
