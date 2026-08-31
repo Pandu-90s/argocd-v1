@@ -3,30 +3,26 @@ kind: Application
 metadata:
   name: catalogue
   namespace: argocd
-  # Finalizers enable cascading deletes, meaning deleting the app deletes its managed k8s resources.
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+
 spec:
-  # The project the application belongs to. Defaults to 'default'
   project: default
 
-  # Source defines the Git repository configuration where manifests are stored
   source:
-    chart: catalogue
     repoURL: 'https://github.com/Pandu-90s/catalogue-config.git'
     targetRevision: main
     path: .
     helm:
-      valueFiles: 
-      - values-dev.yaml
-      - values.yaml
-  # Destination defines where the application manifests will be deployed
+      valueFiles:
+        - values-dev.yaml
+        - values.yaml
+
   destination:
-    server: 'https://kubernetes.default.svc' # Deploys to the cluster hosting Argo CD
+    server: 'https://kubernetes.default.svc'
     namespace: roboshop-dev
 
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true 
-
+      selfHeal: true
